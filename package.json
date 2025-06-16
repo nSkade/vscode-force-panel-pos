@@ -1,0 +1,53 @@
+{
+  "name": "force-panel-pos",
+  "displayName": "Force Panel Pos",
+  "description": "forces workbench Panel position to designated place",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Force Panel Pos",
+      "properties": {
+        "forcePanelPos.location": {
+          "type": "string",
+          "enum": ["bottom", "right", "left"],
+          "default": "right",
+          "description": "Where should the panel be forced to?",
+          "enumDescriptions": [
+            "Force the panel to the bottom",
+            "Force the panel to the right",
+            "Force the panel to the left"
+          ]
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.89.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  }
+}
