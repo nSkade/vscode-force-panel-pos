@@ -60,11 +60,11 @@ export function activate(context: vscode.ExtensionContext) {
     const disposableToggle = vscode.commands.registerCommand('forcePanelPos.togglePanel', togglePanel);
     context.subscriptions.push(disposableToggle);
 
-    // Optionally, set initial panel position (does not open it)
-    const config = vscode.workspace.getConfiguration('forcePanelPos');
-    const location = config.get<string>('location', 'right');
-    const command = getPanelCommand(location);
-    vscode.commands.executeCommand(command);
+    // Optionally, set initial panel position (does open it)
+    //const config = vscode.workspace.getConfiguration('forcePanelPos');
+    //const location = config.get<string>('location', 'right');
+    //const command = getPanelCommand(location);
+    //vscode.commands.executeCommand(command);
 
     // Watch for configuration changes
     const configWatcher = vscode.workspace.onDidChangeConfiguration(e => {
